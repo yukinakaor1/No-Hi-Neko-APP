@@ -9,7 +9,7 @@ function PetDisplay(props) {
             <p>Bond Level: {props.bondingLevel}</p>
 
             <div style={{ fontSize: '50px' }}>
-                <img src="src/assets/react.svg" alt="" />
+                {props.mood}
             </div>
             {/* The Interaction */}
             <button className={styles.btn} onClick={props.onBond}>
