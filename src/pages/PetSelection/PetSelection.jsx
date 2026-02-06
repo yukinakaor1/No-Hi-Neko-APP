@@ -1,17 +1,61 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { usePet } from '../../context/PetContext';
-// Note: imports go up 2 levels:  PetSelection -> pages -> src -> context
+import FreakyCat from '../../../assets/MeiMei.png';
+import ThousandYardStareCat from '../../../assets/Arwin.png';
+import SuspiciousCat from '../../../assets/Shan.png';
+import CrashOutCat from '../../../assets/Leon.png';
+import './PetSelection.css';
 
 export default function PetSelection() {
     const navigate = useNavigate();
     const { selectThePet } = usePet();
 
-    // Our 4 hardcoded pets
+    // Our 4 hardcoded pets with their own info (shown after bonding)
     const pets = [
-        { id: 1, name: 'Fox', sprite: '🦊' },
-        { id: 2, name: 'Cat', sprite: '🐱' },
-        { id: 3, name: 'Dog', sprite: '🐶' },
-        { id: 4, name: 'Rabbit', sprite: '🐰' }
+        {
+            id: 1,
+            name: 'Freaky Ahh Cat',
+            image: FreakyCat,
+            breed: 'Domestic Shorthair',
+            furPattern: 'Tuxedo',
+            coatType: 'Short, sleek',
+            likes: '3 AM zoomies, knocking things off tables',
+            dislikes: 'Being ignored, closed doors',
+            hobbies: 'Staring at walls, sudden acrobatics'
+        },
+        {
+            id: 2,
+            name: 'Thousand Yard Stare Cat',
+            image: ThousandYardStareCat,
+            breed: 'Domestic Shorthair',
+            furPattern: 'Tabby',
+            coatType: 'Short, dense',
+            likes: 'Windowsills, existential contemplation',
+            dislikes: 'Loud noises, eye contact',
+            hobbies: 'Staring into the void, judging from afar'
+        },
+        {
+            id: 3,
+            name: 'Suspicious Cat',
+            image: SuspiciousCat,
+            breed: 'Domestic Shorthair',
+            furPattern: 'Tabby',
+            coatType: 'Medium, fluffy',
+            likes: 'Hidden treats, high vantage points',
+            dislikes: 'Unexpected guests, sudden movements',
+            hobbies: 'Eavesdropping, side-eyeing everyone'
+        },
+        {
+            id: 4,
+            name: 'Crash Out Cat',
+            image: CrashOutCat,
+            breed: 'Domestic Longhair',
+            furPattern: 'Tabby',
+            coatType: 'Short, soft',
+            likes: 'Naps in sunbeams, being draped over furniture',
+            dislikes: 'Early mornings, excessive activity',
+            hobbies: 'Sleeping in weird positions, dramatic flops'
+        }
     ];
 
     const handleSelect = (pet) => {
@@ -22,25 +66,34 @@ export default function PetSelection() {
     };
 
     return (
-        <div style={{ padding: '20px', textAlign: 'center' }}>
-            <h1>Choose Your Companion</h1>
-            <div style={{
-                display: 'flex',
-                gap: '20px',
-                justifyContent: 'center',
-                flexWrap: 'wrap'
-            }}>
+        <div className="app-page-center">
+        <div className="pet-selection-page">
+            <header className="pet-selection-header">
+                <Link to="/" className="pet-selection-back-btn" aria-label="Back">
+                    &lt;
+                </Link>
+                <div className="pet-selection-title">Cat Selection</div>
+            </header>
+            <div className="pet-selection-grid">
                 {pets.map(pet => (
-                    <button
+                    <div
                         key={pet.id}
+                        className="pet-selection-card"
                         onClick={() => handleSelect(pet)}
-                        style={{ padding: '20px', fontSize: '20px', cursor: 'pointer' }}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => e.key === 'Enter' && handleSelect(pet)}
                     >
-                        <div style={{ fontSize: '40px' }}>{pet.sprite}</div>
-                        {pet.name}
-                    </button>
+                        <div className="pet-selection-image-wrap">
+                            <img src={pet.image} alt={pet.name} />
+                        </div>
+                        <button type="button" className="pet-selection-name-btn">
+                            {pet.name}
+                        </button>
+                    </div>
                 ))}
             </div>
+        </div>
         </div>
     );
 }

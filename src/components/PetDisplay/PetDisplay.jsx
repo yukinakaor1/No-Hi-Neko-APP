@@ -14,45 +14,37 @@ function PetDisplay(props) {
     const isNamed = !!props.petName;
 
     return (
-        <div style={{ border: '2px solid #ccc', padding: '20px', margin: '20px', borderRadius: '10px', textAlign: 'center' }}>
-            <h2>{props.name}</h2>
+        <div className={styles.card}>
+            {props.image && (
+                <img src={props.image} alt={props.name} className={styles.cardImage} />
+            )}
+            <h2 className={styles.cardName}>{props.name}</h2>
+            <p className={styles.bondLevel}>Bond Level: {props.bondingLevel}</p>
+            {props.mood && <div className={styles.mood}>{props.mood}</div>}
 
-            {/* Visualizing the bond */}
-            <p>Bond Level: {props.bondingLevel}</p>
-            {/* Debugging Help (remove later if needed) */}
-            {/* <small>Target: {props.bondTarget}</small> */}
-
-            <div style={{ fontSize: '50px' }}>
-                {props.mood}
-            </div>
-
-            {/* The Interaction */}
             {!isNamed && !isReadyToName && (
-                <button className={styles.btn} onClick={props.onBond}>
-                    ❤️ Bond
+                <button type="button" className={styles.petBtn} onClick={props.onBond}>
+                    Pet!
                 </button>
             )}
 
-            {/* Naming Section */}
             {!isNamed && isReadyToName && (
-                <div style={{ marginTop: '20px' }}>
-                    <p>You've bonded enough! Name your companion:</p>
+                <div className={styles.nameSection}>
+                    <p className={styles.namePrompt}>You've bonded enough! Name your companion:</p>
                     <input
                         type="text"
                         value={tempName}
                         onChange={(e) => setTempName(e.target.value)}
                         placeholder="Enter name..."
-                        style={{ padding: '5px', fontSize: '16px' }}
+                        className={styles.nameInput}
                     />
-                    <button onClick={handleNameSubmit} style={{ marginLeft: '10px', padding: '5px 10px' }}>
+                    <button type="button" onClick={handleNameSubmit} className={styles.saveBtn}>
                         Save Name
                     </button>
                 </div>
             )}
 
-            {isNamed && (
-                <p style={{ color: 'green', fontWeight: 'bold' }}>Forever Bonded!</p>
-            )}
+            {isNamed && <p className={styles.bonded}>Forever Bonded!</p>}
         </div>
     );
 }

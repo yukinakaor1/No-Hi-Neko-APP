@@ -1,0 +1,56 @@
+/* Home – minimalist design, black borders */
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.homepage-title-block {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.title-text {
+  font-size: 60px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: 0.02em;
+  font-family: serif;
+}
+
+.subtitle-text {
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0 0 0;
+  letter-spacing: 2px;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-button {
+  padding: 14px 32px;
+  font-size: 15px;
+  border: 1px solid #1a1a1a;
+  background: #fff;
+  color: #1a1a1a;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.nav-button:hover {
+  background: #1a1a1a;
+  color: #fff;
+}

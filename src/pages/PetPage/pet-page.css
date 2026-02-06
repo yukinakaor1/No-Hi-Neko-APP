@@ -1,0 +1,322 @@
+/* Pet page – same soft minimal vibe */
+.pet-page-container {
+  max-width: 1000px;
+  width: 100%;
+  padding: 32px;
+  background: #fff;
+  border: 1px solid #d0d0d0;
+  border-radius: 12px;
+  background-image: radial-gradient(circle, #e5e5e5 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.pet-page-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.pet-page-back-btn {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid #c0c0c0;
+  border-radius: 10px;
+  color: #1a1a1a;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.pet-page-back-btn:hover {
+  background: #f0f0f0;
+}
+
+.pet-page-title {
+  padding: 12px 22px;
+  background: #fff;
+  border: 1px solid #c0c0c0;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.pet-content {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.pet-image-container {
+  flex: 0 0 300px;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+.pet-image-container img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.pet-info-container {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pet-name-box {
+  border: 1px solid #c0c0c0;
+  padding: 16px 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+  color: #1a1a1a;
+  background: #fff;
+}
+
+.pet-details-box {
+  border: 1px solid #d0d0d0;
+  padding: 18px 20px;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+.pet-details-box p {
+  margin: 8px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.pet-details-box p:first-child {
+  margin-top: 0;
+}
+
+.pet-details-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* Empty state & bonding wrapper – same vibe */
+.pet-page-wrap {
+  max-width: 1000px;
+  width: 100%;
+  padding: 32px;
+  background: #fff;
+  border: 1px solid #d0d0d0;
+  border-radius: 12px;
+  background-image: radial-gradient(circle, #e5e5e5 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.pet-page-empty {
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.pet-page-empty h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 20px 0;
+}
+
+.pet-page-empty .link-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #fff;
+  border: 1px solid #c0c0c0;
+  border-radius: 10px;
+  color: #1a1a1a;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.pet-page-empty .link-btn:hover {
+  background: #f0f0f0;
+}
+
+.pet-page-bonding-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.pet-page-bonding-title {
+  padding: 12px 22px;
+  background: #fff;
+  border: 1px solid #c0c0c0;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* Bonding layout: cat image left, progress circle + actions right */
+.bonding-layout {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.bonding-cat-frame {
+  flex-shrink: 0;
+  width: 220px;
+  height: 220px;
+  border: 1px solid #c0c0c0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.bonding-cat-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bonding-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Circular progress ring */
+.progress-ring-wrap {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(#444 0deg, #444 calc(var(--p) * 3.6deg), #e5e5e5 calc(var(--p) * 3.6deg) 360deg);
+}
+
+.progress-ring-inner {
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-ring-text {
+  position: relative;
+  z-index: 1;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.bonding-action-btn {
+  padding: 12px 24px;
+  background: #fff;
+  border: 1px solid #c0c0c0;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.bonding-action-btn:hover {
+  background: #f0f0f0;
+  border-color: #b0b0b0;
+}
+
+.bonding-name-section {
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 260px;
+}
+
+.bonding-name-section .name-prompt {
+  font-size: 14px;
+  color: #444;
+  margin: 0;
+  text-align: center;
+}
+
+.bonding-name-section .name-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.bonding-name-section .name-input {
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #c0c0c0;
+  border-radius: 8px;
+  min-width: 140px;
+}
+
+.bonding-name-section .save-name-btn {
+  padding: 10px 16px;
+  border: 1px solid #c0c0c0;
+  border-radius: 8px;
+  background: #fff;
+  color: #1a1a1a;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.bonding-name-section .save-name-btn:hover {
+  background: #f0f0f0;
+}
+
+@media (max-width: 600px) {
+  .bonding-layout {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .pet-content {
+    flex-direction: column;
+  }
+
+  .pet-image-container {
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+}
